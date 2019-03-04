@@ -1,0 +1,39 @@
+let muldvarpe = {
+  x: 0,
+  y: 0,
+}
+let score = 0; 
+
+function setup() {
+  
+  w = (windowWidth);
+  h = (windowHeight);
+  frameRate(1);
+}
+
+function mouseClicked() {
+
+  
+ if(dist(mouseX,mouseY,muldvarpe.x,muldvarpe.y)<40){
+   print("fik dig");
+   print(score = score + 1); 
+ } else {
+   print("forbier"); 
+ }
+  
+  ellipse(muldvarpe.x, muldvarpe.y, 40, 40);
+  // prevent default
+  return false;
+}
+
+function draw() {
+
+  createCanvas(w, h);
+  muldvarpe.x = random(w);
+  muldvarpe.y = random(h);
+  smooth();
+  fill(0);
+  ellipse(muldvarpe.x, muldvarpe.y, 40, 40);
+
+
+}
